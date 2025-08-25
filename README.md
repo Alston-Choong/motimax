@@ -1,24 +1,13 @@
-![MOTIMAX Logo](./MOTIMAX.png)
+[![Live Demo](./MOTIMAX.png)
 
-# 🚀 MOTIMAX — Elevate Life. Master Mindset. Achieve Success.
+
+# 🚀 Motimax — Elevate Life. Master Mindset. Achieve Success.
 
 ## **AI-powered superapp for personal growth, mental wellness, inspiration and productive living. Designed for Gen Z and welcoming to every age and gender.**
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-motimax.vercel.app-pastekpurple?style=flat-square)](https://motimax.vercel.app)
-[![Demo Video](https://img.shields.io/badge/Demo%20Video-YouTube-red?logo=youtube)](https://youtube.com/@AlstonChoong)
-[![X](https://img.shields.io/badge/X-@AlstonChoong-black?logo=x)](https://x.com/AlstonChoong)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?logo=linkedin)](https://www.linkedin.com/in/alstonchoong)
-[![Instagram](https://img.shields.io/badge/Instagram-Follow-E4405F?logo=instagram&logoColor=blueredpurple)](https://www.instagram.com/dr.alstonchoong)
-[![Facebook](https://img.shields.io/badge/Facebook-Follow-1877F2?logo=facebook&logoColor=navyblue)](https://www.facebook.com/dr.alstonchoong)
-[![Weibo](https://img.shields.io/badge/Weibo-Follow-E6162D?logo=sinaweibo&logoColor=orange)](https://weibo.com/u/7946325478)
-[![XiaoHongShu](https://img.shields.io/badge/XiaoHongShu-RED-FF2741?logo=xiaohongshu&logoColor=RED-FF2741)](https://www.xiaohongshu.com/user/profile/650c88550000000017022a87)
-
-**Contact:** alston1121@gmail.com I alston@um.edu.my 
-🚀 Motimax — Elevate Life. Master Mindset. Achieve Success.
-AI-powered superapp for personal growth, mental wellness, inspiration and productive living. Designed for Gen Z and welcoming to every age and gender.
-
 <p align="center"> <a href="https://motimax.vercel.app"> <img src="https://img.shields.io/badge/Live%20Demo-motimax.vercel.app-pastelpurple" alt="Live Demo"> </a> <a href="https://youtube.com/@AlstonChoong"> <img src="https://img.shields.io/badge/Demo%20Video-YouTube-red" alt="Demo Video"> </a> <a href="https://x.com/AlstonChoong"> <img src="https://img.shields.io/badge/X-@AlstonChoong-black?logo=X" alt="X"> </a> <a href="https://www.linkedin.com/in/alstonchoong"> <img src="https://img.shields.io/badge/LinkedIn-Connect-blue?logo=linkedin" alt="LinkedIn"> </a> <a href="https://www.instagram.com/dr.alstonchoong"> <img src="https://img.shields.io/badge/Instagram-Follow-E4405F?logo=instagram&logoColor=bluerredpurple" alt="Instagram"> </a> <a href="https://www.facebook.com/dr.alstonchoong"> <img src="https://img.shields.io/badge/Facebook-Follow-1877F2?logo=facebook&logoColor=navyblue" alt="Facebook"> </a> <a href="https://medium.com/@dr.alstonchoong"> <img src="https://img.shields.io/badge/Medium-Read%20Articles-12100E?logo=medium&logoColor=black" alt="Medium"> </a> <a href="https://weibo.com/u/7946325478"> <img src="https://img.shields.io/badge/Weibo-Follow-E6162D?logo=sinaweibo&logoColor=orange" alt="Weibo"> </a> <a href="https://www.xiaohongshu.com/user/profile/650c88550000000017022a87"> <img src="https://img.shields.io/badge/XiaoHongShu-RED-FF2741" alt="XiaoHongShu"> </a> </p>
-📩 Contact: alston1121@gmail.com | alston@um.edu.my
+
+📩 alston1121@gmail.com | alston@um.edu.my
 
 🎯 Vision
 Motimax turns ideas into daily actions. It blends science-backed learning, creative expression and honest reflection into short, energising sessions that build resilience, mindset and momentum. The aim is simple: help anyone form better habits, grow confidence and share positive impact with the world.
