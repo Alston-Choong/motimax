@@ -16,11 +16,11 @@ Motimax turns ideas into daily actions — blending science‑backed learning, c
 
 ## ✨ Core Experience
 
-• Personalised onboarding — preferred name, pronouns, DOB, secure sign‑in (Google, Microsoft, GitHub, email) with MFA; choose theme (dark/light/neon/system), language (EN‑US/EN‑UK/ZH‑CN), and session length (5–20 min).
-• Optional personality insight — Big Five, MBTI, VIA, DISC, HEXACO.
-• Five‑stage lessons — 3–5 multimedia tasks per stage: mini‑games, role‑play, simulated conversations, AI Avatars (TTS/STT/voice cloning), inspiration clips, reflection and mindfulness with music.
-• Motivation generator — animated, narrated quote tiles or short clips; one‑tap share to TikTok/YouTube Shorts/Instagram/X.
-• Themes & languages — dark/light/vibrant/system; bilingual UI (EN‑US/EN‑UK/ZH‑CN).
+- • Personalised onboarding — preferred name, pronouns, DOB, secure sign‑in (Google, Microsoft, GitHub, email) with MFA; choose theme (dark/light/neon/system), language (EN‑US/EN‑UK/ZH‑CN), and session length (5–20 min).
+- • Optional personality insight — Big Five, MBTI, VIA, DISC, HEXACO.
+- • Five‑stage lessons — 3–5 multimedia tasks per stage: mini‑games, role‑play, simulated conversations, AI Avatars (TTS/STT/voice cloning), inspiration clips, reflection and mindfulness with music.
+- • Motivation generator — animated, narrated quote tiles or short clips; one‑tap share to TikTok/YouTube Shorts/Instagram/X.
+- • Themes & languages — dark/light/vibrant/system; bilingual UI (EN‑US/EN‑UK/ZH‑CN).
 
 ## 🧩 Features at a Glance
 
@@ -37,7 +37,14 @@ Motimax turns ideas into daily actions — blending science‑backed learning, c
 
 ## 🏆 Alignment with Judging Criteria
 
-- Real‑World Impact • Technological Implementation • Innovation & Creativity • Functionality & Usability • Scalability & Maintainability • Remixability & Openness • Safety, Privacy & Ethics • Documentation & Demo
+- • Real‑World Impact 
+- • Technological Implementation 
+- • Innovation & Creativity 
+- • Functionality & Usability 
+- • Scalability & Maintainability 
+- • Remixability & Openness 
+- • Safety, Privacy & Ethics 
+- • Documentation & Demo
 
 ## 🛠 Tech Stack
 
@@ -103,4 +110,4 @@ MIT — see [LICENSE](./LICENSE).
 
 ## ❤️ Credits
 
-Created with ❤️ by **Alston Choong**, with inspiring support from **MiniMax Agent**.
+Created with ❤️ by **Alston-Choong**, with inspiring support from **MiniMax Agent**.
