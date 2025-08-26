@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motimax - Elevate Life. Master Mindset. Achieve Success!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; color: #1f2937; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+        .loading-screen { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; justify-content: center; align-items: center; z-index: 9999; transition: opacity 0.5s; }
+        .loading-screen.hidden { opacity: 0; pointer-events: none; }
+        .loading-content { text-align: center; color: white; }
+        .brand-logo { font-size: 3rem; font-weight: 900; margin-bottom: 1rem; background: linear-gradient(135deg, #ff0080, #0080ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: glow 2s infinite; }
+        @keyframes glow { 0% { text-shadow: 0 0 20px rgba(255,255,255,0.5); } 100% { text-shadow: 0 0 30px rgba(255,255,255,0.8); } }
+        .loading-bar { width: 300px; height: 4px; background: rgba(255,255,255,0.2); border-radius: 2px; margin: 2rem auto; overflow: hidden; }
+        .loading-progress { width: 0%; height: 100%; background: linear-gradient(90deg, #ff0080, #0080ff); animation: loading 3s infinite; }
+        @keyframes loading { 0% { width: 0%; } 50% { width: 70%; } 100% { width: 100%; } }
+        .navbar { position: fixed; top: 0; width: 100%; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); z-index: 1000; padding: 1rem 0; transition: transform 0.3s; }
+        .navbar.hidden { transform: translateY(-100%); }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+        .nav-brand .brand-logo { font-size: 1.5rem; color: #3b82f6; }
+        .nav-menu { display: flex; gap: 1rem; }
+        .nav-item { display: flex; flex-direction: column; align-items: center; padding: 0.5rem 1rem; background: none; border: none; cursor: pointer; transition: all 0.3s; border-radius: 0.5rem; }
+        .nav-item:hover { background: #3b82f6; color: white; transform: translateY(-2px); }
+        .main-content { margin-top: 80px; min-height: calc(100vh - 80px); }
+        .page { display: none; padding: 2rem 0; }
+        .page.active { display: block; animation: fadeIn 0.5s; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .hero { text-align: center; padding: 4rem 0; color: white; }
+        .hero h1 { font-size: 3.5rem; font-weight: 900; margin-bottom: 1rem; background: linear-gradient(135deg, #ff0080, #0080ff, #00ff80); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9; }
+        .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .btn { padding: 1rem 2rem; border: none; border-radius: 50px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.3s; }
+        .btn-primary { background: linear-gradient(135deg, #ff0080, #0080ff); color: white; }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(255,0,128,0.3); }
+        .btn-secondary { background: rgba(255,255,255,0.2); color: white; border: 2px solid rgba(255,255,255,0.3); }
+        .features { padding: 4rem 0; background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); margin: 2rem 0; border-radius: 20px; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem; }
+        .feature-card { background: rgba(255,255,255,0.95); padding: 2rem; border-radius: 15px; text-align: center; transition: all 0.3s; }
+        .feature-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .feature-icon { font-size: 3rem; margin-bottom: 1rem; }
+        .dashboard { background: rgba(255,255,255,0.95); border-radius: 20px; padding: 2rem; margin: 2rem auto; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+        .stat-card { background: linear-gradient(135deg, #3b82f6, #8b5cf6); color: white; padding: 1.5rem; border-radius: 15px; text-align: center; }
+        .stat-number { font-size: 2rem; font-weight: 900; display: block; }
+        .progress-bar { width: 100%; height: 8px; background: #e5e7eb; border-radius: 4px; overflow: hidden; margin: 1rem 0; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, #ff0080, #0080ff); border-radius: 4px; transition: width 1s; }
+        .modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); display: none; justify-content: center; align-items: center; z-index: 10000; }
+        .modal.active { display: flex; }
+        .modal-content { background: white; padding: 2rem; border-radius: 20px; width: 90%; max-width: 400px; text-align: center; }
+        .oauth-buttons { display: flex; flex-direction: column; gap: 1rem; margin: 2rem 0; }
+        .oauth-btn { display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 1rem; border: 2px solid #e5e7eb; border-radius: 10px; background: white; cursor: pointer; transition: all 0.3s; }
+        .oauth-btn:hover { border-color: #3b82f6; transform: translateY(-2px); }
+        @media (max-width: 768px) { .hero h1 { font-size: 2.5rem; } .cta-buttons { flex-direction: column; align-items: center; } }
+    </style>
+</head>
+<body>
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <h1 class="brand-logo">MOTIMAX</h1>
+            <p>Elevate Life. Master Mindset. Achieve Success!</p>
+            <div class="loading-bar"><div class="loading-progress"></div></div>
+            <p>Preparing your journey...</p>
+        </div>
+    </div>
+
+    <nav id="navbar" class="navbar hidden">
+        <div class="nav-container">
+            <div class="nav-brand"><h2 class="brand-logo">MOTIMAX</h2></div>
+            <div class="nav-menu">
+                <button class="nav-item" onclick="showPage('dashboard')"><i class="fas fa-home"></i><span>Home</span></button>
+                <button class="nav-item" onclick="showPage('lessons')"><i class="fas fa-book"></i><span>Lessons</span></button>
+                <button class="nav-item" onclick="showPage('personality')"><i class="fas fa-brain"></i><span>Profile</span></button>
+                <button class="nav-item" onclick="showPage('quotes')"><i class="fas fa-quote-left"></i><span>Quotes</span></button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <div id="landing" class="page active">
+            <div class="container">
+                <div class="hero">
+                    <h1>Welcome to MOTIMAX</h1>
+                    <p>Your AI-powered companion for personal growth, mental wellness, and achieving your dreams</p>
+                    <div class="cta-buttons">
+                        <button class="btn btn-primary" onclick="showAuth()">Get Started</button>
+                        <button class="btn btn-secondary" onclick="showPage('demo')">View Demo</button>
+                    </div>
+                </div>
+                <div class="features">
+                    <div class="container">
+                        <h2 style="text-align: center; color: white; margin-bottom: 2rem;">Powerful Features for Your Growth</h2>
+                        <div class="features-grid">
+                            <div class="feature-card"><div class="feature-icon">🧠</div><h3>AI-Powered Insights</h3><p>Advanced personality testing with Big Five, MBTI, and custom assessments</p></div>
+                            <div class="feature-card"><div class="feature-icon">🎯</div><h3>Interactive Lessons</h3><p>5-stage learning system with gamification and AI avatar interactions</p></div>
+                            <div class="feature-card"><div class="feature-icon">✨</div><h3>Quote Generator</h3><p>Create stunning motivational content for social media sharing</p></div>
+                            <div class="feature-card"><div class="feature-icon">🌍</div><h3>Multi-Language</h3><p>Available in English (US/UK) and Chinese with cultural adaptation</p></div>
+                            <div class="feature-card"><div class="feature-icon">📱</div><h3>Mobile-First</h3><p>Optimized for Gen Z with vibrant themes and smooth interactions</p></div>
+                            <div class="feature-card"><div class="feature-icon">🚀</div><h3>Progress Tracking</h3><p>Comprehensive analytics and achievement system to keep you motivated</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="dashboard" class="page">
+            <div class="container">
+                <div class="dashboard">
+                    <h1>Welcome back! 🎉</h1>
+                    <p>Your personal growth journey continues</p>
+                    <div class="stats-grid">
+                        <div class="stat-card"><span class="stat-number">68%</span><span>Overall Progress</span></div>
+                        <div class="stat-card"><span class="stat-number">12</span><span>Lessons Completed</span></div>
+                        <div class="stat-card"><span class="stat-number">7</span><span>Day Streak</span></div>
+                        <div class="stat-card"><span class="stat-number">4</span><span>Tests Taken</span></div>
+                    </div>
+                    <div style="background: #f8fafc; padding: 2rem; border-radius: 15px; margin-top: 2rem;">
+                        <h3>Today's Goal</h3>
+                        <p>Complete the "Mental Wellness" lesson series</p>
+                        <div class="progress-bar"><div class="progress-fill" style="width: 75%;"></div></div>
+                        <p><strong>3 of 4 tasks completed</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="lessons" class="page">
+            <div class="container">
+                <div class="dashboard">
+                    <h1>Interactive Lessons 📚</h1>
+                    <p>Choose your learning path</p>
+                    <div class="features-grid" style="margin-top: 2rem;">
+                        <div class="feature-card"><div class="feature-icon">🧠</div><h3>Personal Growth</h3><p>5-stage journey to unlock your potential</p><div class="progress-bar"><div class="progress-fill" style="width: 60%;"></div></div></div>
+                        <div class="feature-card"><div class="feature-icon">💚</div><h3>Mental Wellness</h3><p>Build resilience and emotional strength</p><div class="progress-bar"><div class="progress-fill" style="width: 20%;"></div></div></div>
+                        <div class="feature-card"><div class="feature-icon">⚡</div><h3>Productivity</h3><p>Master time management and focus</p><div class="progress-bar"><div class="progress-fill" style="width: 0%;"></div></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="personality" class="page">
+            <div class="container">
+                <div class="dashboard">
+                    <h1>Personality Profile 🔍</h1>
+                    <p>Discover your unique traits and characteristics</p>
+                    <div class="features-grid" style="margin-top: 2rem;">
+                        <div class="feature-card"><h3>Big Five Results</h3><div style="text-align: left; margin-top: 1rem;"><p><strong>Openness:</strong> 85%</p><p><strong>Conscientiousness:</strong> 72%</p><p><strong>Extraversion:</strong> 63%</p><p><strong>Agreeableness:</strong> 78%</p><p><strong>Neuroticism:</strong> 34%</p></div></div>
+                        <div class="feature-card"><h3>MBTI Assessment</h3><p>Take the comprehensive personality test</p><button class="btn btn-primary" style="margin-top: 1rem;">Start Test</button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="quotes" class="page">
+            <div class="container">
+                <div class="dashboard">
+                    <h1>Quote Generator ✨</h1>
+                    <p>Create inspiring content to share with the world</p>
+                    <div id="quote-display" style="background: linear-gradient(135deg, #ff0080, #0080ff); color: white; padding: 2rem; border-radius: 15px; text-align: center; margin: 2rem 0;">
+                        <h2>"Success is not final, failure is not fatal: it is the courage to continue that counts."</h2>
+                        <p style="margin-top: 1rem; opacity: 0.8;">- Winston Churchill</p>
+                    </div>
+                    <div class="cta-buttons">
+                        <button class="btn btn-primary" onclick="generateQuote()">Generate New Quote</button>
+                        <button class="btn btn-secondary">Share to Social</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="auth-modal" class="modal">
+        <div class="modal-content">
+            <h2>Join Motimax</h2>
+            <p>Sign in to start your personal growth journey</p>
+            <div class="oauth-buttons">
+                <button class="oauth-btn" onclick="authenticateGoogle()"><i class="fab fa-google" style="color: #db4437;"></i>Continue with Google</button>
+                <button class="oauth-btn" onclick="authenticateGitHub()"><i class="fab fa-github" style="color: #333;"></i>Continue with GitHub</button>
+            </div>
+            <button onclick="closeAuth()" style="background: none; border: none; color: #666; cursor: pointer;">Close</button>
+        </div>
+    </div>
+
+    <script>
+        setTimeout(() => {
+            document.getElementById('loading-screen').classList.add('hidden');
+            setTimeout(() => { document.getElementById('navbar').classList.remove('hidden'); }, 500);
+        }, 3000);
+        
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+        }
+        
+        function showAuth() { document.getElementById('auth-modal').classList.add('active'); }
+        function closeAuth() { document.getElementById('auth-modal').classList.remove('active'); }
+        
+        function authenticateGoogle() {
+            setTimeout(() => { closeAuth(); showPage('dashboard'); showNotification('Successfully logged in with Google! 🎉'); }, 1000);
+        }
+        
+        function authenticateGitHub() {
+            setTimeout(() => { closeAuth(); showPage('dashboard'); showNotification('Successfully logged in with GitHub! 🎉'); }, 1000);
+        }
+        
+        function generateQuote() {
+            const quotes = [
+                { text: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
+                { text: "Innovation distinguishes between a leader and a follower.", author: "Steve Jobs" },
+                { text: "Your limitation—it's only your imagination.", author: "Unknown" },
+                { text: "Push yourself, because no one else is going to do it for you.", author: "Unknown" },
+                { text: "Great things never come from comfort zones.", author: "Unknown" }
+            ];
+            const quote = quotes[Math.floor(Math.random() * quotes.length)];
+            document.getElementById('quote-display').innerHTML = `<h2>"${quote.text}"</h2><p style="margin-top: 1rem; opacity: 0.8;">- ${quote.author}</p>`;
+            showNotification('New quote generated! ✨');
+        }
+        
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.textContent = message;
+            notification.style.cssText = 'position: fixed; top: 20px; right: 20px; background: #10b981; color: white; padding: 1rem 2rem; border-radius: 10px; z-index: 10000;';
+            document.body.appendChild(notification);
+            setTimeout(() => notification.remove(), 3000);
+        }
+    </script>
+</body>
+</html>
