@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motimax - Elevate Life. Master Mindset. Achieve Success!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* Purple Geometric M Logo - Exact match to your MOTIMAX.jpg */
+        .motimax-logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 2rem;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='grad1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23a855f7'/%3E%3Cstop offset='40%25' style='stop-color:%236366f1'/%3E%3Cstop offset='80%25' style='stop-color:%238b5cf6'/%3E%3Cstop offset='100%25' style='stop-color:%236d28d9'/%3E%3C/linearGradient%3E%3ClinearGradient id='grad2' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23c084fc'/%3E%3Cstop offset='50%25' style='stop-color:%23a855f7'/%3E%3Cstop offset='100%25' style='stop-color:%237c3aed'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg transform='translate(20,20)'%3E%3Cpath d='M15,160 L80,15 L145,160 L115,160 L80,60 L45,160 Z' fill='url(%23grad1)' stroke='%23ffffff' stroke-width='3' opacity='0.95'/%3E%3Cpath d='M25,140 L80,40 L135,140 L115,140 L80,80 L45,140 Z' fill='url(%23grad2)' opacity='0.7'/%3E%3Cpolygon points='40,50 60,80 80,50 100,80 120,50 110,70 90,50 80,70 70,50 50,70 30,50' fill='%23ffffff' opacity='0.3'/%3E%3Cpolygon points='50,120 70,140 80,120 90,140 110,120 100,130 80,120 70,130 60,120' fill='%23ffffff' opacity='0.25'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat;
+            filter: drop-shadow(0 0 25px rgba(168, 85, 247, 0.7));
+            animation: logoGlow 4s ease-in-out infinite alternate;
+        }
+
+        @keyframes logoGlow {
+            0% {
+                filter: drop-shadow(0 0 15px rgba(168, 85, 247, 0.6));
+                transform: scale(1);
+            }
+            100% {
+                filter: drop-shadow(0 0 35px rgba(168, 85, 247, 0.9)) drop-shadow(0 0 50px rgba(255, 0, 128, 0.4));
+                transform: scale(1.05);
+            }
+        }
+
+        .brand-title {
+            font-size: 6rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #ff0080, #0080ff, #a855f7, #00ff80);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 0.1em;
+            text-shadow: 0 0 40px rgba(255, 255, 255, 0.4);
+            animation: titleGlow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes titleGlow {
+            0% {
+                filter: drop-shadow(0 0 10px rgba(168, 85, 247, 0.5));
+                transform: scale(1);
+            }
+            100% {
+                filter: drop-shadow(0 0 30px rgba(168, 85, 247, 0.8)) drop-shadow(0 0 40px rgba(255, 0, 128, 0.3));
+                transform: scale(1.02);
+            }
+        }
+
+        .tagline {
+            font-size: 2.2rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            color: #ffffff;
+        }
+
+        .app-description {
+            font-size: 1.4rem;
+            font-weight: 400;
+            line-height: 1.6;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .auth-section {
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 30px;
+            padding: 3rem;
+            margin: 2rem auto;
+            max-width: 500px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .oauth-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .oauth-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            padding: 1.3rem 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            color: #374151;
+            border: none;
+            border-radius: 18px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .oauth-btn:hover {
+            background: white;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .oauth-btn i {
+            font-size: 1.4rem;
+        }
+
+        .divider {
+            text-align: center;
+            margin: 2rem 0;
+            position: relative;
+            opacity: 0.8;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .divider span {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0 1.5rem;
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+        }
+
+        .email-login-btn {
+            width: 100%;
+            padding: 1.3rem 2rem;
+            background: linear-gradient(135deg, #a855f7, #ec4899);
+            border: none;
+            border-radius: 18px;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 25px rgba(168, 85, 247, 0.3);
+        }
+
+        .email-login-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(168, 85, 247, 0.4);
+            filter: brightness(1.1);
+        }
+
+        .auth-links {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .auth-link {
+            color: #a855f7;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            padding: 0.5rem;
+        }
+
+        .auth-link:hover {
+            text-decoration: underline;
+            color: #ec4899;
+            transform: scale(1.05);
+        }
+
+        /* Modals */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            padding: 1rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 3rem;
+            border-radius: 30px;
+            width: 100%;
+            max-width: 550px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .modal h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-align: center;
+            background: linear-gradient(135deg, #ff0080, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .modal p {
+            text-align: center;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.7rem;
+            font-weight: 600;
+            color: #ffffff;
+            font-size: 1rem;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 1.2rem 1.5rem;
+            background: rgba(255, 255, 255, 0.15);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 15px;
+            color: white;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #a855f7;
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.2);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .phone-input-group {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .country-code {
+            flex: 0 0 120px;
+        }
+
+        .phone-number {
+            flex: 1;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.7rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            margin: 0;
+            margin-top: 2px;
+        }
+
+        .checkbox-group label {
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        .form-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 1.2rem 2rem;
+            border: none;
+            border-radius: 15px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #a855f7, #ec4899);
+            color: white;
+            box-shadow: 0 8px 20px rgba(168, 85, 247, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(168, 85, 247, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .close-modal:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        /* Dashboard/Content Area */
+        .dashboard {
+            display: none;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .dashboard.active {
+            display: block;
+        }
+
+        .dashboard-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .dashboard-nav {
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(20px);
+            border-radius: 25px;
+            padding: 1.5rem;
+            margin-bottom: 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .nav-brand .motimax-logo {
+            width: 50px;
+            height: 50px;
+        }
+
+        .nav-brand-text {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ff0080, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .logout-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .logout-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .welcome-message {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ff0080, #0080ff, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .content-card {
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .content-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            border-color: rgba(168, 85, 247, 0.5);
+        }
+
+        .card-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .card-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .card-description {
+            opacity: 0.8;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .card-btn {
+            background: linear-gradient(135deg, #a855f7, #ec4899);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(168, 85, 247, 0.3);
+        }
+
+        .card-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(168, 85, 247, 0.4);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .brand-title {
+                font-size: 4rem;
+            }
+            
+            .tagline {
+                font-size: 1.8rem;
+            }
+            
+            .app-description {
+                font-size: 1.2rem;
+            }
+            
+            .auth-section {
+                margin: 1rem;
+                padding: 2rem;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .auth-links {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+            
+            .welcome-message {
+                font-size: 2.5rem;
+            }
+            
+            .dashboard {
+                padding: 1rem;
+            }
+            
+            .modal-content {
+                padding: 2rem;
+                margin: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .brand-title {
+                font-size: 3rem;
+            }
+            
+            .motimax-logo {
+                width: 80px;
+                height: 80px;
+            }
+        }
+
+        /* Custom scrollbar for modal */
+        .modal-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .modal-content::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+        }
+
+        .modal-content::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+        }
+
+        .modal-content::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <!-- Landing Page -->
+    <div id="landing-page" class="landing-page">
+        <div class="container">
+            <div class="motimax-logo"></div>
+            
+            <h1 class="brand-title">MOTIMAX</h1>
+            
+            <p class="tagline">Elevate Life. Master Mindset. Achieve Success!</p>
+            
+            <p class="app-description">
+                AI‑powered superapp for personal growth, mental wellness, inspiration and productive living — designed for Gen Z and welcoming to every age and gender.
+            </p>
+
+            <div class="auth-section">
+                <div class="oauth-buttons">
+                    <button class="oauth-btn" onclick="authenticateWithGoogle()">
+                        <i class="fab fa-google" style="color: #db4437;"></i>
+                        Continue with Google
+                    </button>
+                    <button class="oauth-btn" onclick="authenticateWithGitHub()">
+                        <i class="fab fa-github" style="color: #333;"></i>
+                        Continue with GitHub
+                    </button>
+                </div>
+
+                <div class="divider">
+                    <span>OR</span>
+                </div>
+
+                <button class="email-login-btn" onclick="showModal('login-modal')">
+                    <i class="fas fa-envelope"></i>&nbsp;&nbsp;Continue with Email
+                </button>
+
+                <div class="auth-links">
+                    <a href="#" class="auth-link" onclick="showModal('forgot-modal')">🔒 Forgot Password?</a>
+                    <a href="#" class="auth-link" onclick="showModal('signup-modal')">🚀 New User? Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Email Login Modal -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal('login-modal')">&times;</button>
+            <div class="motimax-logo" style="width: 60px; height: 60px;"></div>
+            <h2>Sign In</h2>
+            <p>Welcome back! Please sign in to your account.</p>
+            
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="login-email">Email Address</label>
+                    <input type="email" id="login-email" class="form-input" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" class="form-input" placeholder="Enter your password" required>
+                </div>
+                
+                <div class="form-buttons">
+                    <button type="submit" class="btn btn-primary">🔐 Sign In</button>
+                    <button type="button" class="btn btn-secondary" onclick="closeModal('login-modal')">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Sign Up Modal -->
+    <div id="signup-modal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal('signup-modal')">&times;</button>
+            <div class="motimax-logo" style="width: 60px; height: 60px;"></div>
+            <h2>Join Motimax</h2>
+            <p>Create your account and start your personal growth journey.</p>
+            
+            <form id="signup-form">
+                <div class="form-group">
+                    <label for="signup-name">Preferred Name *</label>
+                    <input type="text" id="signup-name" class="form-input" placeholder="Enter your preferred name" required>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="signup-dob">Date of Birth *</label>
+                        <input type="date" id="signup-dob" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-gender">Gender *</label>
+                        <select id="signup-gender" class="form-input" required>
+                            <option value="">Select Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="non-binary">Non-Binary</option>
+                            <option value="prefer-not-to-say">Prefer not to say</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="signup-email">Email Address *</label>
+                    <input type="email" id="signup-email" class="form-input" placeholder="Enter your email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="signup-password">Password (Optional)</label>
+                    <input type="password" id="signup-password" class="form-input" placeholder="Create a password (optional)">
+                    <small style="opacity: 0.7; font-size: 0.9rem;">Leave blank if you prefer to use only OAuth login</small>
+                </div>
+
+                <div class="form-group">
+                    <label>Phone Number (Optional - for MFA)</label>
+                    <div class="phone-input-group">
+                        <select id="country-code" class="form-input country-code">
+                            <option value="+1">🇺🇸 +1</option>
+                            <option value="+44">🇬🇧 +44</option>
+                            <option value="+60" selected>🇲🇾 +60</option>
+                            <option value="+65">🇸🇬 +65</option>
+                            <option value="+86">🇨🇳 +86</option>
+                            <option value="+81">🇯🇵 +81</option>
+                            <option value="+82">🇰🇷 +82</option>
+                            <option value="+91">🇮🇳 +91</option>
+                            <option value="+61">🇦🇺 +61</option>
+                            <option value="+49">🇩🇪 +49</option>
+                            <option value="+33">🇫🇷 +33</option>
+                            <option value="+39">🇮🇹 +39</option>
+                            <option value="+34">🇪🇸 +34</option>
+                            <option value="+31">🇳🇱 +31</option>
+                            <option value="+46">🇸🇪 +46</option>
+                            <option value="+47">🇳🇴 +47</option>
+                            <option value="+45">🇩🇰 +45</option>
+                        </select>
+                        <input type="tel" id="phone-number" class="form-input phone-number" placeholder="Phone number">
+                    </div>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="terms-checkbox" required>
+                    <label for="terms-checkbox">I agree to the Terms of Service and Privacy Policy *</label>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="marketing-checkbox">
+                    <label for="marketing-checkbox">I want to receive marketing emails and updates</label>
+                </div>
+                
+                <div class="form-buttons">
+                    <button type="submit" class="btn btn-primary">🚀 Create Account</button>
+                    <button type="button" class="btn btn-secondary" onclick="closeModal('signup-modal')">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Forgot Password Modal -->
+    <div id="forgot-modal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal('forgot-modal')">&times;</button>
+            <div class="motimax-logo" style="width: 60px; height: 60px;"></div>
+            <h2>Reset Password</h2>
+            <p>Enter your email address and we'll send you a link to reset your password.</p>
+            
+            <form id="forgot-form">
+                <div class="form-group">
+                    <label for="forgot-email">Email Address</label>
+                    <input type="email" id="forgot-email" class="form-input" placeholder="Enter your email" required>
+                </div>
+                
+                <div class="form-buttons">
+                    <button type="submit" class="btn btn-primary">📧 Send Reset Link</button>
+                    <button type="button" class="btn btn-secondary" onclick="closeModal('forgot-modal')">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Dashboard/Content Area -->
+    <div id="dashboard" class="dashboard">
+        <div class="dashboard-nav">
+            <div class="nav-brand">
+                <div class="motimax-logo"></div>
+                <span class="nav-brand-text">Motimax</span>
+            </div>
+            <button class="logout-btn" onclick="logout()">
+                <i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;Logout
+            </button>
+        </div>
+
+        <div class="dashboard-header">
+            <h1 class="welcome-message">Welcome to Your Growth Journey! 🚀</h1>
+            <p style="font-size: 1.3rem; opacity: 0.8;">Explore all the powerful features designed to elevate your life</p>
+        </div>
+
+        <div class="content-grid">
+            <div class="content-card">
+                <span class="card-icon">🧠</span>
+                <h3 class="card-title">Personality Tests</h3>
+                <p class="card-description">Discover your authentic self with Big Five, MBTI, and custom personality assessments powered by AI.</p>
+                <button class="card-btn">Take Assessment</button>
+            </div>
+            
+            <div class="content-card">
+                <span class="card-icon">📚</span>
+                <h3 class="card-title">Interactive Lessons</h3>
+                <p class="card-description">Engage with our 5-stage learning modules featuring gamification and AI avatar interactions.</p>
+                <button class="card-btn">Start Learning</button>
+            </div>
+            
+            <div class="content-card">
+                <span class="card-icon">✨</span>
+                <h3 class="card-title">Quote Generator</h3>
+                <p class="card-description">Create stunning motivational content for social media with AI-powered inspirational quotes.</p>
+                <button class="card-btn">Generate Quote</button>
+            </div>
+            
+            <div class="content-card">
+                <span class="card-icon">🎯</span>
+                <h3 class="card-title">Goal Tracking</h3>
+                <p class="card-description">Set, track, and achieve your personal milestones with our comprehensive goal management system.</p>
+                <button class="card-btn">Set Goals</button>
+            </div>
+            
+            <div class="content-card">
+                <span class="card-icon">🌱</span>
+                <h3 class="card-title">Daily Insights</h3>
+                <p class="card-description">Receive personalized growth recommendations based on your progress and personality profile.</p>
+                <button class="card-btn">View Insights</button>
+            </div>
+            
+            <div class="content-card">
+                <span class="card-icon">👥</span>
+                <h3 class="card-title">Community</h3>
+                <p class="card-description">Connect with like-minded individuals in our supportive Gen Z community.</p>
+                <button class="card-btn">Join Community</button>
+            </div>
+            
+            <div class="content-card">
+                <span class="card-icon">🔒</span>
+                <h3 class="card-title">Privacy & Security</h3>
+                <p class="card-description">Your data is protected with enterprise-grade security and privacy controls.</p>
+                <button class="card-btn">Privacy Settings</button>
+            </div>
+            
+            <div class="content-card">
+                <span class="card-icon">📱</span>
+                <h3 class="card-title">Mobile Experience</h3>
+                <p class="card-description">Access all features seamlessly across devices with our mobile-first design.</p>
+                <button class="card-btn">Download App</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // User state management
+        let currentUser = null;
+        let isLoggedIn = false;
+
+        // Show modals
+        function showModal(modalId) {
+            document.getElementById(modalId).classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        // Close modals
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+
+        // OAuth Authentication
+        function authenticateWithGoogle() {
+            showNotification('🔄 Connecting to Google...', 'info');
+            
+            // Simulate OAuth flow
+            setTimeout(() => {
+                const userData = {
+                    id: 'google_' + Date.now(),
+                    name: 'John Doe',
+                    email: 'john.doe@gmail.com',
+                    provider: 'google',
+                    avatar: 'https://via.placeholder.com/100'
+                };
+                
+                loginUser(userData);
+                showNotification('🎉 Successfully signed in with Google!', 'success');
+            }, 2000);
+        }
+
+        function authenticateWithGitHub() {
+            showNotification('🔄 Connecting to GitHub...', 'info');
+            
+            // Simulate OAuth flow
+            setTimeout(() => {
+                const userData = {
+                    id: 'github_' + Date.now(),
+                    name: 'Jane Smith',
+                    email: 'jane.smith@users.noreply.github.com',
+                    provider: 'github',
+                    avatar: 'https://via.placeholder.com/100'
+                };
+                
+                loginUser(userData);
+                showNotification('🎉 Successfully signed in with GitHub!', 'success');
+            }, 2000);
+        }
+
+        // Email Login
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+            
+            if (!email || !password) {
+                showNotification('⚠️ Please fill in all fields', 'warning');
+                return;
+            }
+            
+            showNotification('🔄 Signing in...', 'info');
+            
+            // Simulate login process
+            setTimeout(() => {
+                const userData = {
+                    id: 'email_' + Date.now(),
+                    name: email.split('@')[0],
+                    email: email,
+                    provider: 'email'
+                };
+                
+                loginUser(userData);
+                closeModal('login-modal');
+                showNotification('🎉 Successfully signed in!', 'success');
+            }, 1500);
+        });
+
+        // Sign Up
+        document.getElementById('signup-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('signup-name').value;
+            const email = document.getElementById('signup-email').value;
+            const dob = document.getElementById('signup-dob').value;
+            const gender = document.getElementById('signup-gender').value;
+            const termsAccepted = document.getElementById('terms-checkbox').checked;
+            
+            if (!name || !email || !dob || !gender || !termsAccepted) {
+                showNotification('⚠️ Please fill in all required fields and accept terms', 'warning');
+                return;
+            }
+            
+            const formData = {
+                name: name,
+                email: email,
+                dob: dob,
+                gender: gender,
+                password: document.getElementById('signup-password').value,
+                phone: document.getElementById('country-code').value + document.getElementById('phone-number').value,
+                marketing: document.getElementById('marketing-checkbox').checked
+            };
+            
+            showNotification('🔄 Creating your account...', 'info');
+            
+            // Simulate account creation
+            setTimeout(() => {
+                // Store user data (in real app, this would be sent to server)
+                localStorage.setItem('pendingUser', JSON.stringify(formData));
+                
+                closeModal('signup-modal');
+                showNotification('🎉 Account created successfully! You can now sign in.', 'success');
+                
+                // Auto-open appropriate login method
+                if (formData.password) {
+                    setTimeout(() => {
+                        showModal('login-modal');
+                        // Pre-fill email
+                        document.getElementById('login-email').value = formData.email;
+                    }, 1000);
+                }
+            }, 2000);
+        });
+
+        // Forgot Password
+        document.getElementById('forgot-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('forgot-email').value;
+            
+            if (!email) {
+                showNotification('⚠️ Please enter your email address', 'warning');
+                return;
+            }
+            
+            showNotification('📧 Sending password reset link...', 'info');
+            
+            setTimeout(() => {
+                closeModal('forgot-modal');
+                showNotification(`📧 Password reset link sent to ${email}! Check your inbox.`, 'success');
+            }, 1500);
+        });
+
+        // Login user and show dashboard
+        function loginUser(userData) {
+            currentUser = userData;
+            isLoggedIn = true;
+            
+            // Hide landing page and show dashboard
+            document.getElementById('landing-page').style.display = 'none';
+            document.getElementById('dashboard').classList.add('active');
+            
+            // Update welcome message with user name
+            const welcomeMsg = document.querySelector('.welcome-message');
+            welcomeMsg.innerHTML = `Welcome ${userData.name}! 🚀`;
+            
+            // Close any open modals
+            document.querySelectorAll('.modal').forEach(modal => {
+                modal.classList.remove('active');
+            });
+            
+            document.body.style.overflow = 'auto';
+        }
+
+        // Logout
+        function logout() {
+            if (confirm('Are you sure you want to logout?')) {
+                currentUser = null;
+                isLoggedIn = false;
+                
+                // Show landing page and hide dashboard
+                document.getElementById('dashboard').classList.remove('active');
+                document.getElementById('landing-page').style.display = 'block';
+                
+                // Reset form fields
+                document.querySelectorAll('form').forEach(form => form.reset());
+                
+                showNotification('👋 Successfully logged out!', 'info');
+            }
+        }
+
+        // Notification system
+        function showNotification(message, type = 'info') {
+            // Remove existing notification
+            const existing = document.querySelector('.notification');
+            if (existing) existing.remove();
+
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.textContent = message;
+            
+            const colors = {
+                success: '#10b981',
+                error: '#ef4444',
+                info: '#3b82f6',
+                warning: '#f59e0b'
+            };
+            
+            notification.style.cssText = `
+                position: fixed;
+                top: 2rem;
+                right: 2rem;
+                background: ${colors[type] || colors.info};
+                color: white;
+                padding: 1.2rem 2rem;
+                border-radius: 15px;
+                z-index: 20000;
+                font-weight: 600;
+                font-size: 1rem;
+                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+                animation: slideInRight 0.3s ease-out;
+                max-width: 400px;
+                word-wrap: break-word;
+            `;
+
+            // Add animation styles if not exists
+            if (!document.querySelector('#notification-styles')) {
+                const style = document.createElement('style');
+                style.id = 'notification-styles';
+                style.textContent = `
+                    @keyframes slideInRight {
+                        from { transform: translateX(100%); opacity: 0; }
+                        to { transform: translateX(0); opacity: 1; }
+                    }
+                    @keyframes slideOutRight {
+                        from { transform: translateX(0); opacity: 1; }
+                        to { transform: translateX(100%); opacity: 0; }
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+
+            document.body.appendChild(notification);
+            
+            // Auto remove after 5 seconds
+            setTimeout(() => {
+                notification.style.animation = 'slideOutRight 0.3s ease-out forwards';
+                setTimeout(() => notification.remove(), 300);
+            }, 5000);
+        }
+
+        // Close modal when clicking outside
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.modal.active').forEach(modal => {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                });
+            }
+        });
+
+        // Add interactive effects to content cards
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.content-card');
+            cards.forEach(card => {
+                const btn = card.querySelector('.card-btn');
+                if (btn) {
+                    btn.addEventListener('click', function() {
+                        const cardTitle = card.querySelector('.card-title').textContent;
+                        showNotification(`🚀 ${cardTitle} feature launching soon! Stay tuned.`, 'info');
+                    });
+                }
+            });
+        });
+
+        // Form validation enhancements
+        document.querySelectorAll('.form-input').forEach(input => {
+            input.addEventListener('input', function() {
+                if (this.checkValidity()) {
+                    this.style.borderColor = '#10b981';
+                } else {
+                    this.style.borderColor = 'rgba(255, 255, 255, 0.3)';
+                }
+            });
+        });
+
+        // Show welcome notification when page loads
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                showNotification('🎉 Welcome to MOTIMAX! Your personal growth journey awaits.', 'success');
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
