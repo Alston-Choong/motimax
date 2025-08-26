@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motimax - Elevate Life. Master Mindset. Achieve Success!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: white;
+            margin: 0; padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .motimax-logo {
+            width: 100px;
+            height: 100px;
+            margin: 2rem auto 1.5rem;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='grad1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23a855f7'/%3E%3Cstop offset='40%25' style='stop-color:%238b5cf6'/%3E%3Cstop offset='75%25' style='stop-color:%236366f1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpolygon points='20,180 100,20 180,180 140,180 100,80 60,180' fill='url(%23grad1)' stroke='%23fff' stroke-width='4'/%3E%3C/svg%3E") center/contain no-repeat;
+        }
+        .brand-title {
+            font-size: 5rem;
+            font-weight: 900;
+            letter-spacing: 0.1em;
+            background: linear-gradient(135deg, #ff0080, #a855f7 60%, #20e3b2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+        .tagline {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #fff;
+        }
+        .app-description {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2.5rem;
+        }
+        .auth-section {
+            max-width: 420px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 22px;
+            margin: 2rem auto;
+            padding: 2rem 1.5rem;
+            box-shadow: 0 16px 32px rgba(111,41,180,0.08);
+        }
+        .oauth-buttons { display: flex; flex-direction: column; gap: 1.2rem; margin-bottom: 1.2rem;}
+        .oauth-btn {
+            display: flex; align-items: center;
+            gap: 0.8rem;
+            justify-content: center;
+            font-size: 1.15rem; font-weight: 600;
+            color: #374151; background: #fff; border: none; border-radius: 11px; padding: 1rem 1.5rem;
+            cursor: pointer;
+            transition: all 0.28s ease;
+        }
+        .oauth-btn:hover { background: #f3f4f6; }
+        .divider { color: #e7e7e7; font-size: 1.1rem; margin: 1.7rem 0 0.7rem;}
+        .email-login-btn {width: 100%;background: linear-gradient(135deg, #a855f7, #20e3b2); color: #fff;
+            border:none; border-radius:11px; font-size: 1.08rem; font-weight: 700; padding:1.1rem 1.2rem; cursor:pointer;}
+        .email-login-btn:hover { filter: brightness(1.09);}
+        .auth-links { display:flex; justify-content: space-between; margin-top: 1.4rem; }
+        .auth-link { color: #a855f7; font-weight: 600; text-decoration: none; }
+        .auth-link:hover { text-decoration: underline;}
+        .modal {position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.7); display:none; align-items:center; justify-content:center; z-index:1001;}
+        .modal.active {display:flex;}
+        .modal-content {background: #222446; border-radius:20px; width:90%; max-width:410px; padding:2.3rem 2rem; text-align:left; position:relative;}
+        .modal-content h2 {text-align:center; font-size:1.5rem; margin-bottom:0.8em; color: #a855f7;}
+        .modal-content label {font-weight:600; display:block; margin: 1em 0 0.45em 0;}
+        .form-input { width:100%; padding:0.85em; border-radius:9px; border:1px solid #bbb6d6; font-size:1.06em; margin-bottom:1em;}
+        .modal-content .form-buttons {display: flex; gap:1.1em; justify-content:center; margin-top:1.5em;}
+        .btn {padding:0.9em 1.3em; border-radius:10px; border:none; font-size:1em; font-weight:600;}
+        .btn-primary { background-image: linear-gradient(135deg,#a855f7,#20e3b2); color: white; }
+        .btn-secondary { background: #7c3aed; color:white; }
+        /* Dashboard */
+        .dashboard { display:none; padding:2.7em 1em;}
+        .dashboard-nav { display:flex; align-items:center; justify-content:space-between; background:rgba(255,255,255,0.09); border-radius:12px; margin-bottom:2.5em;}
+        .dashboard-header {text-align:center; margin-bottom:2.5em;}
+        .dashboard .motimax-logo {width:56px;height:56px; margin: 0;}
+        .dashboard .logout-btn {background:rgba(255,255,255,0.13); border-radius:9px; color:white;font-weight:600;
+            padding:0.7rem 1.25rem; border:none;}
+        .dashboard .logout-btn:hover {background:rgba(255,255,255,0.24);}
+        .content-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2em;}
+        .content-card {background:rgba(255,255,255,0.08); border-radius:14px; text-align:center; padding:1.7em; margin:0.5em 0;}
+        .content-card .card-title {font-size:1.22em; font-weight:700;}
+        .content-card .card-btn {margin-top:1.2em; background: linear-gradient(135deg, #a855f7, #20e3b2); border:none; color:white;
+            font-weight:600; border-radius:8px; padding:0.8em 1.4em;}
+        /* Responsive */
+        @media (max-width: 700px) {.brand-title{font-size:2.6em;} .dashboard{padding:1em;} .modal-content{padding:1.3rem 0.7rem;} }
+    </style>
+</head>
+<body>
+    <div id="landing-page" class="landing-page">
+        <div class="container">
+            <div class="motimax-logo"></div>
+            <div class="brand-title">MOTIMAX</div>
+            <div class="tagline">Elevate Life. Master Mindset. Achieve Success!</div>
+            <div class="app-description">
+                AI‑powered superapp for personal growth, mental wellness, inspiration and productive living — designed for Gen Z and welcoming to every age and gender.
+            </div>
+            <div class="auth-section">
+                <div class="oauth-buttons">
+                    <button class="oauth-btn" onclick="authenticateWithGoogle()">
+                        <i class="fab fa-google" style="color:#db4437;"></i> Continue with Google
+                    </button>
+                    <button class="oauth-btn" onclick="authenticateWithGitHub()">
+                        <i class="fab fa-github" style="color:#444;"></i> Continue with GitHub
+                    </button>
+                </div>
+                <div class="divider">OR</div>
+                <button class="email-login-btn" onclick="showModal('login-modal')">
+                    <i class="fas fa-envelope"></i> Continue with Email
+                </button>
+                <div class="auth-links">
+                    <a href="#" class="auth-link" onclick="showModal('forgot-modal')">Forgot Password?</a>
+                    <a href="#" class="auth-link" onclick="showModal('signup-modal')">New User? Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Email Login Modal -->
+    <div id="login-modal" class="modal"><div class="modal-content">
+        <div class="motimax-logo" style="width:52px;height:52px;"></div>
+        <h2>Sign In</h2>
+        <form id="login-form">
+            <label for="login-email">Email Address</label>
+            <input type="email" id="login-email" class="form-input" placeholder="Enter your email" required>
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password" class="form-input" placeholder="Enter your password" required>
+            <div class="form-buttons">
+                <button type="submit" class="btn btn-primary">Sign In</button>
+                <button type="button" class="btn btn-secondary" onclick="closeModal('login-modal')">Cancel</button>
+            </div>
+        </form>
+    </div></div>
+    <!-- Sign Up Modal -->
+    <div id="signup-modal" class="modal"><div class="modal-content">
+        <div class="motimax-logo" style="width:52px;height:52px;"></div>
+        <h2>Join Motimax</h2>
+        <form id="signup-form">
+            <label>Preferred Name *</label>
+            <input type="text" id="signup-name" class="form-input" required>
+            <label>Date of Birth *</label>
+            <input type="date" id="signup-dob" class="form-input" required>
+            <label>Gender *</label>
+            <select id="signup-gender" class="form-input" required>
+                <option value="">Select Gender</option>
+                <option>Male</option><option>Female</option>
+                <option>Non-Binary</option><option>Prefer not to say</option>
+                <option>Other</option>
+            </select>
+            <label>Email Address *</label>
+            <input type="email" id="signup-email" class="form-input" required>
+            <label>Password (Optional)</label>
+            <input type="password" id="signup-password" class="form-input" placeholder="Leave blank for OAuth only">
+            <label>Phone Number (MFA Optional)</label>
+            <div style="display:flex; gap:0.5em;">
+                <select id="country-code" class="form-input" style="max-width:100px;">
+                    <option value="+60" selected>+60</option>
+                    <option value="+1">+1</option>
+                    <option value="+65">+65</option>
+                    <option value="+86">+86</option>
+                    <option value="+44">+44</option>
+                </select>
+                <input type="tel" id="phone-number" class="form-input" placeholder="Phone number">
+            </div>
+            <div style="margin:1em 0 0.3em 0;">
+                <label><input type="checkbox" id="terms-checkbox" required> I agree to the Terms & Privacy *</label>
+            </div>
+            <div class="form-buttons">
+                <button type="submit" class="btn btn-primary">Create Account</button>
+                <button type="button" class="btn btn-secondary" onclick="closeModal('signup-modal')">Cancel</button>
+            </div>
+        </form>
+    </div></div>
+    <!-- Forgot Password Modal -->
+    <div id="forgot-modal" class="modal"><div class="modal-content">
+        <div class="motimax-logo" style="width:52px;height:52px;"></div>
+        <h2>Reset Password</h2>
+        <form id="forgot-form">
+            <label>Email Address</label>
+            <input type="email" id="forgot-email" class="form-input" required placeholder="Enter your email">
+            <div class="form-buttons">
+                <button type="submit" class="btn btn-primary">Send Reset Link</button>
+                <button type="button" class="btn btn-secondary" onclick="closeModal('forgot-modal')">Cancel</button>
+            </div>
+        </form>
+    </div></div>
+    <!-- Dashboard/Content -->
+    <div id="dashboard" class="dashboard">
+        <div class="dashboard-nav">
+            <div class="motimax-logo" style="width:45px;height:45px;"></div>
+            <div><button class="logout-btn" onclick="logout()">Logout</button></div>
+        </div>
+        <div class="dashboard-header">
+            <h1>Welcome to MOTIMAX! 🚀</h1>
+            <div style="font-size:1.2em;opacity:0.8;">Explore all the powerful features designed to elevate your life</div>
+        </div>
+        <div class="content-grid">
+            <div class="content-card"><div class="card-title">🧠 Personality Tests</div><div>Discover your authentic self.</div>
+                <button class="card-btn">Try Now</button></div>
+            <div class="content-card"><div class="card-title">📚 Interactive Lessons</div><div>Engage 5-stage modules.</div>
+                <button class="card-btn">Learn More</button></div>
+            <div class="content-card"><div class="card-title">✨ Quote Generator</div><div>Create motivation content.</div>
+                <button class="card-btn">Generate</button></div>
+            <div class="content-card"><div class="card-title">🎯 Goal Tracking</div><div>Manage your milestones.</div>
+                <button class="card-btn">Get Started</button></div>
+            <div class="content-card"><div class="card-title">👥 Community</div><div>Connect with others.</div>
+                <button class="card-btn">Join</button></div>
+        </div>
+    </div>
+    <script>
+        // Modal controls
+        function showModal(id) { document.getElementById(id).classList.add('active'); }
+        function closeModal(id) { document.getElementById(id).classList.remove('active'); }
+        // OAuth Sim
+        function authenticateWithGoogle() {
+            showNotification('🔄 Connecting to Google...');
+            setTimeout(()=>{ loginUser({name:'Google User',email:'user@gmail.com'}); showNotification('🎉 Google login!'); },1500);
+        }
+        function authenticateWithGitHub() {
+            showNotification('🔄 Connecting to GitHub...');
+            setTimeout(()=>{ loginUser({name:'GitHubUser',email:'gh@users.noreply.github.com'}); showNotification('🎉 GitHub login!'); },1500);
+        }
+        // Email Auth
+        document.getElementById('login-form').onsubmit = function(e){
+            e.preventDefault();
+            loginUser({name: document.getElementById('login-email').value.split('@')[0],email: document.getElementById('login-email').value});
+            closeModal('login-modal');
+            showNotification('🎉 Signed in!');
+        }
+        // Signup
+        document.getElementById('signup-form').onsubmit = function(e){
+            e.preventDefault();
+            closeModal('signup-modal');
+            showNotification('✔️ Registered! Now log in.');
+            showModal('login-modal');
+        }
+        // Forgot password
+        document.getElementById('forgot-form').onsubmit = function(e){
+            e.preventDefault();
+            closeModal('forgot-modal');
+            showNotification('📧 Reset link sent!');
+        }
+        // Login user
+        function loginUser(user){
+            document.getElementById('landing-page').style.display='none';
+            document.getElementById('dashboard').style.display='block';
+            document.querySelector('.dashboard-header h1').textContent = `Welcome, ${user.name}! 🚀`;
+        }
+        function logout(){
+            document.getElementById('dashboard').style.display='none';
+            document.getElementById('landing-page').style.display='block';
+            showNotification('👋 Logged out');
+        }
+        function showNotification(msg){ // Simple notification
+            let n = document.createElement('div');
+            n.style.position='fixed'; n.style.top='1.5em'; n.style.right='1.5em'; n.style.padding='1em 2em';
+            n.style.background='rgba(80,40,120,0.96)'; n.style.color='#fff'; n.style.fontWeight='bold'; n.style.borderRadius='9px';
+            n.style.zIndex=4000; n.style.boxShadow='0 8px 32px rgba(120,80,200,0.17)'; n.textContent=msg;
+            document.body.appendChild(n); setTimeout(()=>n.remove(),3200);
+        }
+        document.querySelectorAll('.modal').forEach(m => m.onclick = function(e){if (e.target===this) this.classList.remove('active'); });
+        document.onkeydown = function(e){if (e.key==='Escape') document.querySelectorAll('.modal.active').forEach(m=>m.classList.remove('active'));}
+    </script>
+</body>
+</html>
